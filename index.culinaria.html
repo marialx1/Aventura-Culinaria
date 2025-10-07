@@ -1,0 +1,359 @@
+<html lang="pt">
+<head>
+    <!-- Google Fonts para tipografia profissional -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="description" content="Embarque em uma aventura culinária com a Taste of Travel, explorando sabores e receitas globais.">
+    <title>Embarque em uma aventura culinária</title>
+    <style>
+        /* Ícones do rodapé e animação */
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+            margin-bottom: 10px;
+        }
+        .footer-social a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: #e9ecef;
+            transition: background 0.2s, transform 0.2s;
+        }
+        .footer-social a:hover {
+            background: #adb5bd;
+            transform: scale(1.12);
+        }
+        .footer-social svg {
+            width: 22px;
+            height: 22px;
+            fill: #6c757d;
+        }
+        .footer-links {
+            margin-bottom: 8px;
+        }
+        .footer-links a {
+            color: #6c757d;
+            margin: 0 10px;
+            text-decoration: underline;
+            font-size: 0.98em;
+        }
+        .footer-slogan {
+            font-style: italic;
+            color: #888;
+            margin-bottom: 8px;
+        }
+        .footer-separator {
+            width: 60px;
+            height: 3px;
+            background: #adb5bd;
+            margin: 12px auto 18px auto;
+            border-radius: 2px;
+        }
+        body {
+            background: #f7f7fa;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            font-family: 'Montserrat', Arial, sans-serif;
+            color: #444;
+        }
+        }
+        .menu-flutuante {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #f3f3f7;
+            color: #6c757d;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(60,60,60,0.06);
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 12px 0;
+        }
+        .menu-flutuante a {
+            color: #6c757d;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            transition: color 0.2s, background 0.2s;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        .menu-flutuante a:hover {
+            color: #fff;
+            background: #adb5bd;
+        }
+        .container {
+            max-width: 800px;
+            margin: 80px auto 0 auto;
+            text-align: center;
+            background: #fff;
+            border-radius: 18px;
+            padding: 32px 16px;
+            box-shadow: 0 2px 16px rgba(60,60,60,0.08);
+        }
+        .flip-box {
+            background-color: transparent;
+            width: 400px;
+            height: 260px;
+            margin: 0 auto 24px auto;
+            perspective: 1000px;
+        }
+        .flip-box-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        .flip-box:hover .flip-box-inner {
+            transform: rotateY(180deg);
+        }
+        .flip-box-front, .flip-box-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .flip-box-front {
+            background: #f3f3f7;
+            color: #6c757d;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .flip-box-front img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .flip-box-back {
+            background: #fff;
+            color: #6c757d;
+            transform: rotateY(180deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3em;
+            padding: 20px;
+        }
+        .culinaria-tabela {
+            width: 100%;
+            margin: 24px 0;
+            border-collapse: collapse;
+            background: #f7f7fa;
+        }
+        .culinaria-tabela th, .culinaria-tabela td {
+            border: 1px solid #adb5bd;
+            padding: 8px 12px;
+            color: #444;
+        }
+        .culinaria-tabela caption {
+            color: #6c757d;
+            font-size: 1.2em;
+            margin-bottom: 8px;
+        }
+        h1, h2, h3 {
+            color: #444;
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-style: normal;
+            letter-spacing: 0.5px;
+        }
+        /* Animação suave para botões e links */
+        a, input[type="submit"] {
+            transition: background 0.25s, color 0.25s, box-shadow 0.25s, transform 0.18s;
+        }
+        input[type="submit"]:hover {
+            box-shadow: 0 2px 12px #d6336c55;
+            transform: scale(1.04);
+        }
+        p, li, ol, ul, label, input, textarea, form, footer {
+            color: #444;
+            font-size: 20px;
+        }
+        ul, ol {
+            background: #f7f7fa;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 16px 0;
+        }
+        form {
+            margin-top: 32px;
+        }
+        input, textarea {
+            border-radius: 6px;
+            border: 1px solid #adb5bd;
+            padding: 6px;
+            margin-bottom: 8px;
+            width: 80%;
+        }
+        input[type="submit"] {
+            background: #adb5bd;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+            width: auto;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Seção Sobre -->
+    <section id="sobre" style="max-width:800px; margin:40px auto 0 auto; background:#fff0f6; border-radius:18px; box-shadow:0 2px 16px rgba(214,51,108,0.10); padding:32px 16px;">
+        <h2>Sobre o projeto</h2>
+        <p>O Taste of Travel é um projeto dedicado a explorar sabores do mundo, trazendo receitas autênticas e dicas culinárias para todos. Nosso objetivo é inspirar pessoas a experimentar novas culturas através da gastronomia, com conteúdo acessível e visual profissional.</p>
+    </section>
+ 
+    <style>
+        body {
+            background-color: #a3f4fa;
+            text-align: center;
+        }
+        .container {
+            background-color: #d0d2db;
+        }
+    </style>
+ 
+    <nav class="menu-flutuante">
+        <a href="#inicio">Início</a>
+        <a href="#ingredientes">Ingredientes</a>
+        <a href="#preparo">Preparo</a>
+        <a href="#contato">Contato</a>
+    </nav>
+    <div class="container" id="inicio">
+        <div class="flip-box">
+            <div class="flip-box-inner">
+                <div class="flip-box-front">
+                    <img src="1299-1-768x513.jpg" alt="Tom Yum Goong">
+                </div>
+                <div class="flip-box-back">
+                    <div>
+                        <strong>Tom Yum Goong</strong><br>
+                        Strogonoff de frango.<br>
+                        <span style="color:#1e90ff;">Experimente!</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h1 style="font-size: 56px;">Embarque em uma aventura culinária</h1>
+    <h2>Descubra os sabores do Brasil</h2>
+    <h3 id="ingredientes">Strogonoff de Frango: Clássico e Cremoso</h3>
+        <p>O strogonoff de frango é um prato tradicional brasileiro, fácil de preparar e muito saboroso. Ideal para reunir a família e agradar todos os paladares!</p>
+        <blockquote style="color: #d6336c; font-style: italic; background: rgba(214,51,108,0.08); border-left: 4px solid #d6336c; margin: 24px 0; padding: 12px 24px;">
+            <q>O segredo do strogonoff perfeito está no ponto do creme de leite e no tempero do frango.</q>
+            <footer style="margin-top: 8px;">- Chef Brasileiro</footer>
+        </blockquote>
+        <h3>Ingredientes:</h3>
+        <ul>
+            <li><strong>Frango (peito em cubos):</strong> 500g</li>
+            <li><strong>Creme de leite:</strong> 1 caixinha</li>
+            <li><strong>Catchup:</strong> 2 colheres de sopa</li>
+            <li><strong>Mostarda:</strong> 1 colher de sopa</li>
+            <li><strong>Champignon:</strong> 100g (opcional)</li>
+            <li><strong>Cebola picada:</strong> 1 unidade</li>
+            <li><strong>Alho picado:</strong> 2 dentes</li>
+            <li><strong>Óleo ou azeite:</strong> 2 colheres de sopa</li>
+            <li><strong>Sal e pimenta:</strong> a gosto</li>
+        </ul>
+    <h3 id="preparo">Preparação:</h3>
+        <ol>
+            <li>Em uma panela, aqueça o óleo e doure a cebola e o alho.</li>
+            <li>Adicione o frango e refogue até ficar bem cozido.</li>
+            <li>Tempere com sal e pimenta.</li>
+            <li>Acrescente o catchup, a mostarda e o champignon. Misture bem.</li>
+            <li>Desligue o fogo e adicione o creme de leite, mexendo até ficar homogêneo.</li>
+            <li>Sirva com arroz branco e batata palha.</li>
+        </ol>
+        <h3>Dicas de culinária:</h3>
+        <ul>
+            <li>Para um sabor extra, adicione páprica doce ao frango.</li>
+            <li>O champignon é opcional, mas traz textura especial ao prato.</li>
+        </ul>
+        <img src="Strogonoff-de-Frango.jpg" alt="Strogonoff de Frango" style="max-width:100%; border-radius:8px; margin:10px 0;">
+        <table class="culinaria-tabela">
+            <caption>Detalhes da receita</caption>
+            <tr>
+                <th>Ingrediente</th>
+                <th>Quantidade</th>
+            </tr>
+            <tr>
+                <td>Frango (peito em cubos)</td>
+                <td>500g</td>
+            </tr>
+            <tr>
+                <td>Creme de leite</td>
+                <td>1 caixinha</td>
+            </tr>
+            <tr>
+                <td>Catchup</td>
+                <td>2 colheres de sopa</td>
+            </tr>
+            <tr>
+                <td>Mostarda</td>
+                <td>1 colher de sopa</td>
+            </tr>
+            <tr>
+                <td>Champignon</td>
+                <td>100g (opcional)</td>
+            </tr>
+            <tr>
+                <td>Cebola picada</td>
+                <td>1 unidade</td>
+            </tr>
+            <tr>
+                <td>Alho picado</td>
+                <td>2 dentes</td>
+            </tr>
+            <tr>
+                <td colspan="2"><strong>Tempo de preparação:</strong> 30 minutos</td>
+            </tr>
+            <tr>
+                <td colspan="2"><strong>Sugestões de consumo:</strong> Sirva com arroz branco e batata palha.</td>
+            </tr>
+        </table>
+    <h2 id="contato" style="margin-top: 40px;">Fale com a gente</h2>
+        <form>
+            <label for="name">Nome:</label><br>
+            <input type="text" id="name" name="name"><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email"><br>
+            <label for="message">Mensagem:</label><br>
+            <textarea id="message" name="mensagem"></textarea><br>
+            <input type="submit" value="Concluir">
+        </form>
+    </div>
+</body>
+    <!-- Rodapé fixo no final da página -->
+</div>
+    <footer style="background:#f3f3f7; color:#6c757d; text-align:center; padding:32px 0 16px 0; font-size:1.08rem; border-top:1px solid #adb5bd; margin-top:48px; letter-spacing:0.7px; border-radius:0 0 18px 18px; width:100%;">
+        <div class="footer-social">
+            <a href="https://instagram.com" aria-label="Instagram" target="_blank">
+                <svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 2 .2 2.5.4.6.2 1 .5 1.5 1 .5.5.8.9 1 1.5.2.5.3 1.3.4 2.5.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 2-.4 2.5-.2.6-.5 1-1 1.5-.5.5-.9.8-1.5 1-.5.2-1.3.3-2.5.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-2-.2-2.5-.4-.6-.2-1-.5-1.5-1-.5-.5-.8-.9-1-1.5-.2-.5-.3-1.3-.4-2.5C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.2-2 .4-2.5.2-.6.5-1 1-1.5.5-.5.9-.8 1.5-1 .5-.2 1.3-.3 2.5-.4C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.1 0-3.5 0-4.7.1-1.1.1-1.7.2-2.1.3-.5.2-.8.4-1.1.7-.3.3-.5.6-.7 1.1-.1.4-.2 1-.3 2.1-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c.1 1.1.2 1.7.3 2.1.2.5.4.8.7 1.1.3.3.6.5 1.1.7.4.1 1 .2 2.1.3 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.7-.2 2.1-.3.5-.2.8-.4 1.1-.7.3-.3.5-.6.7-1.1.1-.4.2-1 .3-2.1.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1.1-.2-1.7-.3-2.1-.2-.5-.4-.8-.7-1.1-.3-.3-.6-.5-1.1-.7-.4-.1-1-.2-2.1-.3-1.2-.1-1.6-.1-4.7-.1zm0 3.2a6.6 6.6 0 1 0 0 13.2 6.6 6.6 0 0 0 0-13.2zm0 10.8a4.2 4.2 0 1 1 0-8.4 4.2 4.2 0 0 1 0 8.4zm7.2-10.9a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/></svg>
+            </a>
+            <a href="https://facebook.com" aria-label="Facebook" target="_blank">
+                <svg viewBox="0 0 24 24"><path d="M22.675 0h-21.35C.6 0 0 .6 0 1.326v21.348C0 23.4.6 24 1.326 24H12.82v-9.294H9.692V11.01h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.92.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.696h-3.12V24h6.116C23.4 24 24 23.4 24 22.674V1.326C24 .6 23.4 0 22.675 0z"/></svg>
+            </a>
+            <a href="https://youtube.com" aria-label="YouTube" target="_blank">
+                <svg viewBox="0 0 24 24"><path d="M23.498 6.186a2.994 2.994 0 0 0-2.112-2.112C19.633 3.5 12 3.5 12 3.5s-7.633 0-9.386.574A2.994 2.994 0 0 0 .502 6.186C0 7.94 0 12 0 12s0 4.06.502 5.814a2.994 2.994 0 0 0 2.112 2.112C4.367 20.5 12 20.5 12 20.5s7.633 0 9.386-.574a2.994 2.994 0 0 0 2.112-2.112C24 16.06 24 12 24 12s0-4.06-.502-5.814zM9.545 15.568V8.432l6.545 3.568-6.545 3.568z"/></svg>
+            </a>
+        </div>
+        <div class="footer-separator"></div>
+        <div class="footer-links">
+            <a href="#">Política de Privacidade</a>
+            <a href="#">Termos de Uso</a>
+            <a href="#contato">Contato</a>
+        </div>
+        <div class="footer-slogan">Sabores que conectam pessoas ao redor do mundo.</div>
+        <p style="margin-top:18px;">&copy; 2025 Taste of Travel | Desenvolvido por Maria Luisa</p>
+    </footer>
+</html>, 
